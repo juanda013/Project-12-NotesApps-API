@@ -4,7 +4,9 @@ import './head-notes.js';
 import './title.js';
 import './date.js';
 import './body.js';
+//import './fungsi.js';
 
+//Membuat Data Notes Dalam Bentuk Array
 
 const baseUrl = 'https://notes-api.dicoding.dev/v2';
 
@@ -43,8 +45,8 @@ const addNotes = async (note) => {
 };
 
 
-const deleteNotes = (noteId) => {
-    fetch(`${baseUrl}/delete${noteId}`, {
+const deleteNotes = () => {
+    fetch(`${baseUrl}/notes/{note_id}`, {
         method: 'DELETE',
         headers: {
             'X-Auth-Token' : '12345',
@@ -68,10 +70,10 @@ const daftarNotes = (data) => {
     const noteListElement = document.getElementById("list-title");
     noteListElement.innerHTML = '';
 
-    data.forEach(note => {
+    data.forEach((note) => {
         noteListElement.innerHTML += `
         <div class="inner">
-            <h2>(${note.id})${note.title}</h2>
+            <h2>${note.title}</h2>
             <p>${note.body}</p>
             <h3>${note.createdAt}</h3>
             <button class="remove-button"> Delete</button>
@@ -82,7 +84,7 @@ const daftarNotes = (data) => {
     const deleteButtons = document.querySelectorAll('.remove-button');
     deleteButtons.forEach(button => {
         button.addEventListener('click', e => {
-            const noteId = e.target.id;
+            const noteId = e.target.dataset.id;
 
             deleteNotes(noteId);
         });
@@ -116,7 +118,3 @@ document.addEventListener('DOMContentLoaded' ,function () {
     })
     getNotes();
 })
-
-
-
-
