@@ -4,9 +4,6 @@ import './head-notes.js';
 import './title.js';
 import './date.js';
 import './body.js';
-//import './fungsi.js';
-
-//Membuat Data Notes Dalam Bentuk Array
 
 const baseUrl = 'https://notes-api.dicoding.dev/v2';
 
@@ -29,8 +26,7 @@ const addNotes = async (note) => {
         const options = {
             method: 'POST',
             headers: {
-                'Content-Type': 'aplication/json',
-                'X-Auth-Token': '12345',
+              "Content-Type": "application/json",
             },
             body: JSON.stringify(note),
         };
@@ -48,9 +44,6 @@ const addNotes = async (note) => {
 const deleteNotes = () => {
     fetch(`${baseUrl}/notes/{note_id}`, {
         method: 'DELETE',
-        headers: {
-            'X-Auth-Token' : '12345',
-        },
     })
 
     .then((response) => {
@@ -99,7 +92,7 @@ document.addEventListener('DOMContentLoaded' ,function () {
     const noteForm =document.querySelector('form');
     const title = noteForm.elements.subtitle;//Mengambil Value pada tittle
     const createdAt = noteForm.elements.subdate;//Mengambil Value pada date
-    const body = noteForm.elements.subdesc
+    const body = noteForm.elements.subdesc;
 
     noteForm.addEventListener('submit', function(e) {
         e.preventDefault();
