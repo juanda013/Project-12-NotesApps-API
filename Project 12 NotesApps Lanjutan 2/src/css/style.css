@@ -1,0 +1,151 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color:#FDF0D1 ;
+    
+}
+
+header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main .container-sub {
+    width: 300px;
+    padding-bottom: 20px;
+    
+    
+}
+
+main .from-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding-bottom: 5px;
+    
+}
+
+main .from-group label {
+    padding-bottom: 5px;
+    font-weight: 800;
+    
+
+}
+
+section, button .submitButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    
+}
+
+
+
+button[type=submit] {
+    font-family: 'Quicksand', sans-serif;
+    background:#AC7D88;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    padding: 8px;
+    border: none;
+    font-weight: 500;    
+}
+
+button:hover {
+    background-color: #643843;
+    color: white;
+}
+
+
+
+input[type=text], input[type=date], textarea {
+    font-family: Raleway, sans-serif;
+    background:none;
+    border: 1.5px solid black;
+    border-radius: 8px;
+    padding: 16px;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+.list-title h2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+       
+    
+}
+
+.container-list {
+    display: grid;
+    justify-content: center;
+    padding-bottom: 20px;
+    
+}
+
+.container-list .list-notes {
+    display: grid;
+    gap: 20px;
+}
+
+.container-list .inner {
+    padding: 20px;
+    border: 1px solid black;
+    max-width: 540px;
+    
+    
+}
+
+.container-list .inner h3 {
+    display: grid;
+    justify-content: end;
+    
+}
+
+.container-list .inner p {
+    text-align: justify ;
+    
+}
+
+
+.container-list .inner button  {
+    
+    font-family: 'Quicksand', sans-serif;
+    background:#AC7D88;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    padding: 8px;
+    border: none;
+    font-weight: 500;
+    
+}
+
+.container-list .inner button:hover  {
+   background-color: #643843;
+   color: white;
+    
+}
+
+.container-list .list-id {
+    padding-bottom: 20px;
+}
+
