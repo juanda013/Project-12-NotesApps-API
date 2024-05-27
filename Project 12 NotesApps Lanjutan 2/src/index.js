@@ -4,7 +4,7 @@ import './head-notes.js';
 import './title.js';
 import './date.js';
 import './body.js';
-//import './fungsi.js';
+
 
 //Membuat Data Notes Dalam Bentuk Array
 
@@ -14,7 +14,7 @@ const getNotes = async () => {
     try {
         const response = await fetch(`${baseUrl}/notes`);
         const responseJSON = await response.json();
-        if (responseJSON.console.status) {
+        if (responseJSON.error) {
             showResposeMessage(responseJSON.message);
         } else {
             daftarNotes(responseJSON.data);
@@ -67,10 +67,10 @@ const deleteNotes = (noteId) => {
 
 
 const daftarNotes = (data) => {
-    const noteListElement = document.getElementById('notes');
+    const noteListElement = document.getElementById("list-title");
     noteListElement.innerHTML = '';
 
-    data.forEach((note) => {
+    data.forEach(note => {
         noteListElement.innerHTML += `
         <div class="inner">
             <h2>(${note.id})${note.title}</h2>
@@ -79,12 +79,12 @@ const daftarNotes = (data) => {
             <button class="remove-button"> Delete</button>
         </div>
         `;
-    });
-
-    const removeButton = document.getElementsByClassName('remove-button');
-    removeButton.forEach((button) => {
-        button.addEvenListener('click', (event) => {
-            const noteId = event.target.dataset.id;
+    });  
+    
+    const deleteButtons = document.querySelectorAll('.remove-button');
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', e => {
+            const noteId = e.target.id;
 
             deleteNotes(noteId);
         });
