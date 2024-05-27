@@ -91,15 +91,13 @@ const showResposeMessage = (message = 'Check your internet connection') => {
 document.addEventListener('DOMContentLoaded' ,function () {
     const noteForm =document.querySelector('form');
     const title = noteForm.elements.subtitle;//Mengambil Value pada tittle
-    const createdAt = noteForm.elements.subdate;//Mengambil Value pada date
     const body = noteForm.elements.subdesc;
 
     noteForm.addEventListener('submit', function(e) {
         e.preventDefault();
 
         const note = {
-            title: title.value,
-            createdAt: createdAt.value,
+            title: title.value,            
             body: body.value,
         };
 
