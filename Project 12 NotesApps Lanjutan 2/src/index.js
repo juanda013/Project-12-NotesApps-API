@@ -6,8 +6,6 @@ import './date.js';
 import './body.js';
 
 
-//Membuat Data Notes Dalam Bentuk Array
-
 const baseUrl = 'https://notes-api.dicoding.dev/v2';
 
 const getNotes = async () => {
@@ -110,7 +108,7 @@ document.addEventListener('DOMContentLoaded' ,function () {
             body: body.value,
         };
 
-        switch (e,submitter.textContent) {
+        switch (e.submitter.textContent) {
             case 'Submit':
                 addNotes(note);
                 break;
